@@ -1,7 +1,7 @@
 # Styl3R: Instant 3D Stylized Reconstruction for Arbitrary Scenes and Styles
 
 <div align="center">
-  <a href=https://nju-3dv.github.io/projects/Direct3D-S2/ target="_blank"><img src="https://img.shields.io/badge/Project-Page-green.svg" height=22px></a>
+  <a href=https://nickisdope.github.io/Styl3R/ target="_blank"><img src="https://img.shields.io/badge/Project-Page-green.svg" height=22px></a>
   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"><img src=https://img.shields.io/badge/Arxiv-b5212f.svg?logo=arxiv height=22px></a>
 </div>
 
