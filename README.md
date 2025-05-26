@@ -9,9 +9,11 @@
     <p> The code and pretrained models will be released in the near future.</p>
 </div>
 
-<div style="background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.15); display: inline-block; padding: 0px;">
-    <img id="teaser" src="assets/teaser4.0.png" alt="Teaser image of Styl3R"/>
-</div>
+<!-- <div style="background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.15); display: inline-block; padding: 0px;">
+    <img id="teaser" src="assets/teaser_crop-5.gif" alt="Teaser image of Styl3R"/>
+</div> -->
+
+![teaser](assets/teaser_crop-5.gif)
 
 ## 📝 Summary
 - We introduce a feed-forward network for 3D stylization that operates on sparse, unposed content images and an arbitrary style image, does not require test-time optimization, and generalizes well to out-of-domain inputs.
