@@ -1,9 +1,10 @@
 <h1 align="center"> Styl3R: Instant 3D Stylized Reconstruction for Arbitrary Scenes and Styles </h1>
 
 <div align="center">
-  <a href=https://nickisdope.github.io/Styl3R/ target="_blank"><img src="https://img.shields.io/badge/Project-Page-green.svg" height=22px></a>
-  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"><img src=https://img.shields.io/badge/Arxiv-b5212f.svg?logo=arxiv height=22px></a>
+  <!-- <a href=https://nickisdope.github.io/Styl3R/ target="_blank"><img src="https://img.shields.io/badge/Project-Page-green.svg" height=22px></a>
+  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"><img src=https://img.shields.io/badge/Arxiv-b5212f.svg?logo=arxiv height=22px></a> -->
 
+<h3 align="center"><a href="https://arxiv.org/abs/<ARXIV PAPER ID>">Paper</a> | <a href="https://nickisdope.github.io/Styl3R/">Project Page</a> </h3>
 
 📢 The code and pretrained model will be released in the near future.
 
