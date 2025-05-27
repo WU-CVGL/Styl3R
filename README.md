@@ -7,7 +7,7 @@
 
 📢 The code and pretrained model will be released in the near future.
 
-<img src="assets/teaser_crop-9.gif"/>
+<img src="assets/teaser_crop-9.gif" width="600" height="258"/>
 
 </div>
 
