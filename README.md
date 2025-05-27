@@ -9,7 +9,7 @@
     <p> The code and pretrained models will be released in the near future.</p>
 </div>
 
-<div style="background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.15); display: flex; justify-content: center; align-items: center; padding: 0px;">
+<div style="text-align: center; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.15); padding: 0px;">
     <img id="teaser" src="assets/teaser_crop-9.gif" alt="Teaser image of Styl3R"/>
 </div>
 
