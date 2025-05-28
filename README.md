@@ -4,7 +4,7 @@
   <!-- <a href=https://nickisdope.github.io/Styl3R/ target="_blank"><img src="https://img.shields.io/badge/Project-Page-green.svg" height=22px></a>
   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"><img src=https://img.shields.io/badge/Arxiv-b5212f.svg?logo=arxiv height=22px></a> -->
 
-<h3 align="center"><a href="https://arxiv.org/abs/<ARXIV PAPER ID>">Paper</a> | <a href="https://nickisdope.github.io/Styl3R/">Project Page</a> </h3>
+<h3 align="center"><a href="https://arxiv.org/abs/2505.21060">Paper</a> | <a href="https://nickisdope.github.io/Styl3R/">Project Page</a> </h3>
 
 📢 The code and pretrained model will be released in the near future.
 
@@ -24,15 +24,18 @@
 - [ ] Release gradio demo 
 - [ ] Release training code
 
-<!-- ## 📖 Citation
+## 📖 Citation
 
 If you find our work useful, please consider citing our paper:
 
 ```bibtex
-@article{wu2025direct3ds2gigascale3dgeneration,
-  title={Direct3D-S2: Gigascale 3D Generation Made Easy with Spatial Sparse Attention}, 
-  author={Shuang Wu and Youtian Lin and Feihu Zhang and Yifei Zeng and Yikang Yang and Yajie Bao and Jiachen Qian and Siyu Zhu and Philip Torr and Xun Cao and Yao Yao},
-  journal={arXiv preprint arXiv:2505.17412},
-  year={2025}
+@misc{wang2025styl3rinstant3dstylized,
+      title={Styl3R: Instant 3D Stylized Reconstruction for Arbitrary Scenes and Styles}, 
+      author={Peng Wang and Xiang Liu and Peidong Liu},
+      year={2025},
+      eprint={2505.21060},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2505.21060}, 
 }
-``` -->
+```
