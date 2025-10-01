@@ -1,0 +1,21 @@
+n_levels: 1
+
+aggregate: max
+norm: batch
+actv: relu
+res: true
+
+in_conv: mr
+in_dim: 256
+in_radius: 0.015
+in_k: 16
+
+block: mr
+scale_factor: [4]
+dims: [256]
+depth: [1]
+radius: [[[0.015, 0.025]]]
+k: [[[16, 16]]]
+
+out_relu: false
+up: linear

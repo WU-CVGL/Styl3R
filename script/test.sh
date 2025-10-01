@@ -1,0 +1,11 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5 python -m src.main_style  \
+    +experiment=re10k_3view_style_8x8  \
+    mode=test \
+    wandb.name=re10k_pretrained_resume \
+    dataset/view_sampler@dataset.re10k_style.view_sampler=evaluation \
+    dataset.re10k_style.view_sampler.index_path=assets/evaluation_index_re10k.json \
+    dataset.re10k_style.view_sampler.num_context_views=2 \
+    checkpointing.load=outputs/exp_re10k_multi-view_tok-sty-NVS-pretrain_resume3000/2025-05-15_16-28-23/checkpoints/epoch_0-step_3750.ckpt \
+    test.save_image=true \
+    model.encoder.stylized=true \
+    model.encoder.gaussian_adapter.sh_degree=0

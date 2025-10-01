@@ -1,0 +1,2 @@
+class: pointnet2_test.models.PointNet2ClassificationSSG
+name: cls-ssg

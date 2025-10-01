@@ -1,0 +1,51 @@
+# @package _global_
+
+defaults:
+  - /dataset@_group_.re10k_style: re10k_style
+  - override /model/encoder: noposplat_token_style
+  - override /model/encoder/backbone: croco_enc
+  - override /loss: [mse, lpips]
+
+wandb:
+  project: noposplat_xiang_debug
+  name: re10k
+  tags: [re10k, 256x256]
+
+model:
+  encoder:
+    gs_params_head_type: dpt_gs
+    gs_sh_head_type: dpt
+    pose_free: true
+    intrinsics_embed_loc: encoder
+    intrinsics_embed_type: token
+    # pretrained_weights: 'ckpts/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth'
+    # need pretrained intrinsics encoder
+    pretrained_weights: "/ssdwork/datasets/weights/re10k.ckpt"
+  decoder:
+    make_scale_invariant: true
+
+dataset:
+  re10k_style:
+    name: re10k_style
+    style_root: "/ssdwork/datasets/wikiart_combine/images_combine"
+    view_sampler:
+      warm_up_steps: 150_000
+
+optimizer:
+  lr: 1e-4
+  warm_up_steps: 2000
+  backbone_lr_multiplier: 0.1
+
+data_loader:
+  train:
+    batch_size: 8
+
+train:
+  identity_loss: false
+
+trainer:
+  max_steps: 300_001
+  val_check_interval: 2000
+
+checkpointing:
+  every_n_train_steps: 150_000

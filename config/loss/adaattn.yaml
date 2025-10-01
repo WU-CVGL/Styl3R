@@ -1,0 +1,5 @@
+adaattn:
+  lam: 0.3 # the decimal is essential for matching float type
+  content_loss_layers: [3]
+  style_loss_layers: [2, 3]
+  style_loss_stats: ['mean', 'std']

@@ -1,0 +1,4 @@
+model: ViTLarge_BaseDecoder
+patch_embed_cls: PatchEmbedDust3R
+pretrained_weights: 'ckpts/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth'
+# pretrained_weights: "/ssdwork/datasets/weights/re10k.ckpt"
