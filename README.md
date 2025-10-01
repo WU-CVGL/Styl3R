@@ -6,7 +6,7 @@
 
 <h3 align="center"><a href="https://arxiv.org/abs/2505.21060">Paper</a> | <a href="https://nickisdope.github.io/Styl3R/">Project Page</a> </h3>
 
-📢 The code and pretrained model will be released in the near future.
+📢 The codebase is posted, we are still cleaning it up.
 
 <!-- <img src="assets/teaser_crop-9.gif" width="600" height="258"/> -->
 
