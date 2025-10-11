@@ -29,12 +29,9 @@
 If you find our work useful, please consider citing our paper:
 
 ```bibtex
-@misc{wang2025styl3rinstant3dstylized,
-      title={Styl3R: Instant 3D Stylized Reconstruction for Arbitrary Scenes and Styles}, 
-      author={Peng Wang and Xiang Liu and Peidong Liu},
-      year={2025},
-      eprint={2505.21060},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2505.21060}, 
+@article{wang2025styl3r,
+  title={Styl3R: Instant 3D Stylized Reconstruction for Arbitrary Scenes and Styles},
+  author={Wang, Peng and Liu, Xiang and Liu, Peidong},
+  journal={arXiv preprint arXiv:2505.21060},
+  year={2025}
 }
