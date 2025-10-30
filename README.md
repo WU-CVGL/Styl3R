@@ -74,7 +74,7 @@ After setting up the datasets (**RE10K**, **DL3DV**, and **WikiArts**):
 
 
 ## 🚀 Training
-
+First download the [MASt3R](https://download.europe.naverlabs.com/ComputerVision/MASt3R/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth) pretrained model and put it in the `./ckpts` directory.
 ### Stage 1: NVS Pretraining
 #### (1) 2-view Model (RE10K)
 ```
