@@ -1,2 +1,0 @@
-class: pointnet2_test.models.PointNet2ClassificationMSG
-name: cls-msg
