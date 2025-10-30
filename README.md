@@ -6,7 +6,7 @@
 
 <h3 align="center"><a href="https://arxiv.org/abs/2505.21060">Paper</a> | <a href="https://nickisdope.github.io/Styl3R/">Project Page</a> </h3>
 
-📢 The training and inference code is updated, please inform us if you have encountered some issues.
+📢 The training and inference code is updated. Please inform us if you have encountered any issues.
 
 <!-- <img src="assets/teaser_crop-9.gif" width="600" height="258"/> -->
 
