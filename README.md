@@ -62,7 +62,7 @@ After setting up the datasets (**RE10K**, **DL3DV**, and **WikiArts**):
    [`generate_scene_style_correspondences.py`](src/test/generate_scene_style_correspondences.py).  
    Then, run the script to generate **scene-style correspondence** `.json` files.
 
-2. Update the `root` paths in:  
+2. Update the `roots` paths in:  
    - [`re10k_style.yaml`](config/dataset/re10k_style.yaml)  
    - [`dl3dv_style.yaml`](config/dataset/dl3dv_style.yaml)  
 
@@ -220,7 +220,7 @@ https://github.com/user-attachments/assets/654f8419-22b4-4fbe-aa13-0cdd938dfefd
 ## 🧩 Debugging
 A [launch.json](.vscode/launch.json) configuration is provided for debugging all training and inference commands in **VSCode**.
 - Update the `python` field to your Python interpreter path.
-- `Update `checkpointing.load` to your corresponding checkpoint path.
+- Update `checkpointing.load` to your corresponding checkpoint path.
 
 ## 🚧 TODO
 - [x] Release inference code and pretrained models
