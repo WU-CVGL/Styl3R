@@ -74,3 +74,15 @@ Expected folder structure:
 ```
 
 Then you can run the process code [here](src\scripts\wikiart_process.py), you should modify the dataset paths marked by `# TODO`. 
+
+Expected folder structure:
+
+```
+├── datasets
+│   ├── wikiart_combine
+│   ├── ├── images_combine
+│   ├── ├── ├── train
+│   ├── ├── ├── ├── *.jpg
+│   ├── ├── ├── test
+│   ├── ├── ├── ├── *.jpg
+```
