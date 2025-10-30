@@ -1,7 +1,8 @@
 import json
 from pathlib import Path
 
-roots = [Path('/ssdwork/wangpeng/datasets/re10k/re10k')]
+# TODO
+roots = [Path('/run/determined/workdir/data/re10k')]
 
 merged_index = {}
 data_stages = ("test", "train") # for re10k
@@ -20,7 +21,8 @@ for data_stage in data_stages:
         merged_index = {**merged_index, **index}
 re10k_index = merged_index
 
-roots = [Path('/ssdwork/wangpeng/datasets/dl3dv/DL3DV_RE10K')]
+# TODO
+roots = [Path('/run/determined/workdir/data/DL3DV_RE10K')]
 merged_index = {}
 data_stages = ("train",)  # for dl3dv
 
@@ -44,8 +46,9 @@ merged_index = {**re10k_index, **dl3dv_index}
 scenes = list(merged_index.keys())  # Convert to list for indexing/shuffling
 
 # New code to pair scenes with .jpg images
-image_folder = Path('/ssdwork/wangpeng/datasets/wikiart/images_combine/train')  # Specify your folder containing .jpg files
-output_json = Path('/ssdwork/wangpeng/datasets/wikiart/images_combine/train/scene_style_mapping_all.json')    # Output JSON file path
+# TODO
+image_folder = Path('/run/determined/workdir/data/style_transfer/stylegaussian/wikiart_combine/images_combine/train')  # Specify your folder containing .jpg files
+output_json = Path('/run/determined/workdir/data/style_transfer/stylegaussian/wikiart_combine/images_combine/train/scene_style_mapping_all.json')    # Output JSON file path
 
 # Get all .jpg files in the folder, 86399 images in total
 jpg_files = [f.name for f in image_folder.glob('*.jpg') if f.is_file()]
@@ -64,7 +67,7 @@ if len(scenes) != len(jpg_files):
 scene_image_mapping = dict(zip(scenes, jpg_files))
 
 # Write to JSON
-# with output_json.open('w') as f:
-#     json.dump(scene_image_mapping, f, indent=4)
+with output_json.open('w') as f:
+    json.dump(scene_image_mapping, f, indent=4)
 
 print(f"Generated JSON file with {len(scene_image_mapping)} scene-image pairs at {output_json}")
