@@ -56,7 +56,7 @@ Our models are hosted on [Hugging Face](https://huggingface.co/WangPng/Styl3R) ð
 ## ðŸ“š Datasets
 Please refer to **[DATASETS.md](DATASETS.md)** for detailed dataset preparation.
 
-After setting up the datasets (**RE10K**, **DL3DV**, and **WikiArts**):
+After setting up the datasets (**RE10K**, **DL3DV**, and **WikiArt**):
 
 1. Modify the dataset paths marked with `# TODO` in  
    [`generate_scene_style_correspondences.py`](src/test/generate_scene_style_correspondences.py).  
