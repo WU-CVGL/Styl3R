@@ -179,7 +179,7 @@ table.tex
 
 MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth
 
-colmap_test_data/scenes
+# colmap_test_data/scenes
 colmap_test_data/ego_centric_360
 colmap_test_data/re10k_720p
 
