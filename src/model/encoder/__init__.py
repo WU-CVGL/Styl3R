@@ -3,7 +3,6 @@ from typing import Optional
 from .encoder import Encoder
 from .encoder_noposplat import EncoderNoPoSplatCfg, EncoderNoPoSplat
 from .encoder_noposplat_multi import EncoderNoPoSplatMulti
-from .encoder_noposplat_style import EncoderNoPoSplatStyle, EncoderNoPoSplatStyleCfg
 from .encoder_noposplat_token_style import EncoderNoPoSplatTokenStyle, EncoderNoPoSplatTokenStyleCfg
 from .encoder_noposplat_multi_token_style import EncoderNoPoSplatMultiTokenStyle
 from .visualization.encoder_visualizer import EncoderVisualizer
@@ -11,7 +10,6 @@ from .visualization.encoder_visualizer import EncoderVisualizer
 ENCODERS = {
     "noposplat": (EncoderNoPoSplat, None),
     "noposplat_multi": (EncoderNoPoSplatMulti, None),
-    # "noposplat_style": (EncoderNoPoSplatStyle, None),
     "noposplat_token_style": (EncoderNoPoSplatTokenStyle, None),
     "noposplat_multi_token_style": (EncoderNoPoSplatMultiTokenStyle, None)
 }
