@@ -58,6 +58,7 @@ If you would like to train on the high-resolution DL3DV dataset, you will need t
 
 ## WikiArt
 Download link [here](https://www.kaggle.com/datasets/ipythonx/wikiart-gangogh-creating-art-gan)
+
 Expected folder structure:
 
 ```

@@ -19,7 +19,7 @@
 - We design a dual-branch network architecture that decouples appearance and structure modeling, effectively enhancing the joint learning of novel view synthesis and 3D stylization.
 - Our method achieves state-of-the-art zero-shot 3D stylization performance, surpassing existing zero-shot methods and approximate the efficacy of style-specific optimization techniques.
   
-## 📦 Installation
+## ⚙️ Installation
 Our code relies on Python 3.10+, and is developed based on PyTorch 2.2.0 and CUDA 12.1, but it should work with higher Pytorch/CUDA versions as well.
 
 1. Clone Styl3R.
