@@ -1,6 +1,6 @@
 # Datasets
 
-For training, we mainly use [RealEstate10K](https://google.github.io/realestate10k/index.html), [DL3DV](https://github.com/DL3DV-10K/Dataset), and [ACID](https://infinite-nature.github.io/) datasets. We provide the data processing scripts to convert the original datasets to pytorch chunk files which can be directly loaded with this codebase. 
+For training, we mainly use [RealEstate10K](https://google.github.io/realestate10k/index.html), [DL3DV](https://github.com/DL3DV-10K/Dataset) and [WikiArt](https://www.kaggle.com/datasets/ipythonx/wikiart-gangogh-creating-art-gan) datasets. We provide the data processing scripts to convert the original datasets to pytorch chunk files which can be directly loaded with this codebase. 
 
 Expected folder structure:
 
@@ -56,20 +56,20 @@ If you would like to train on the high-resolution DL3DV dataset, you will need t
 
 
 
-## Test Only Datasets
+## WikiArt
+Download link [here](https://www.kaggle.com/datasets/ipythonx/wikiart-gangogh-creating-art-gan)
+Expected folder structure:
 
-### DTU
+```
+├── datasets
+│   ├── wikiart
+│   ├── ├── images
+│   ├── ├── ├── abstract
+│   ├── ├── ├── ├── *.jpg
+│   ├── ├── ├── animal-painting
+│   ├── ├── ├── ├── *.jpg
+│   ├── ├── ├── ...
+│   ├── ├── ├── ├── *.jpg
+```
 
-You can download processed DTU datasets from [here](https://drive.google.com/file/d/1Bd9il_O1jjom6Lk9NP77K8aeQP0d9eEt/view?usp=drive_link).
-
-### ScanNet++
-
-You can download processed ScanNet++ datasets from [here](https://drive.google.com/file/d/1bmkNjXuWLhAOkf-6liS0yyARCybZyQSE/view?usp=sharing).
-
-### ScanNet-1500
-
-For ScanNet-1500, you need to download download `test.npy` [here](https://github.com/zju3dv/LoFTR/blob/master/assets/scannet_test_1500/test.npz) and the corresponding test dataset [here](https://drive.google.com/file/d/1wtl-mNicxGlXZ-UQJxFnKuWPvvssQBwd/view).
-
-## Custom Datasets
-
-If you would like to train and/or evaluate on additional datasets, just modify the [data processing scripts](src/scripts) to convert the dataset format. Kindly note the [camera conventions](https://github.com/cvg/NoPoSplat/tree/main?tab=readme-ov-file#camera-conventions) used in this codebase.
+Then you can run the process code [here](src\scripts\wikiart_process.py), you should modify the dataset paths marked by `# TODO`. 

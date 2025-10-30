@@ -18,8 +18,40 @@
 - We introduce a feed-forward network for 3D stylization that operates on sparse, unposed content images and an arbitrary style image, does not require test-time optimization, and generalizes well to out-of-domain inputs.
 - We design a dual-branch network architecture that decouples appearance and structure modeling, effectively enhancing the joint learning of novel view synthesis and 3D stylization.
 - Our method achieves state-of-the-art zero-shot 3D stylization performance, surpassing existing zero-shot methods and approximate the efficacy of style-specific optimization techniques.
+  
+## 📦 Installation
+Our code relies on Python 3.10+, and is developed based on PyTorch 2.2.0 and CUDA 12.1, but it should work with higher Pytorch/CUDA versions as well.
+
+1. Clone Styl3R.
+```bash
+git clone https://github.com/WU-CVGL/Styl3R
+cd Styl3R
+```
+
+2. Create the environment, here we show an example using conda.
+```bash
+conda create -y -n styl3r python=3.10
+conda activate styl3r
+pip install torch==2.2.0 torchvision==0.17.2 --index-url https://download.pytorch.org/whl/cu121
+pip install -r requirements.txt
+```
+
+3. Optional, compile the cuda kernels for RoPE (as in CroCo v2).
+```bash
+# Styl3R relies on RoPE positional embeddings for which you can compile some cuda kernels for faster runtime.
+cd src/model/encoder/backbone/croco/curope/
+python setup.py build_ext --inplace
+cd ../../../../../..
+```
 
 ## 📦 Pre-trained Checkpoints
+Our models are hosted on [Hugging Face](https://huggingface.co/WangPng/Styl3R) 🤗
+
+|                                                       Model name                                                    | Training resolutions | Training data | Input view num. |   
+|:-------------------------------------------------------------------------------------------------------------------:|:--------------------:|:-------------:|:---------------:|
+|                    [re10k_2v.ckpt]( https://huggingface.co/WangPng/Styl3R/blob/main/re10k_2v.ckpt)                     |        256x256       |     re10k     |        2        |
+|                    [re10k_4v.ckpt]( https://huggingface.co/WangPng/Styl3R/blob/main/re10k_4v.ckpt)                     |        256x256       |     re10k     |        4        |
+|               [re10k_dl3dv_4v.ckpt]( https://huggingface.co/WangPng/Styl3R/blob/main/re10k_dl3dv_4v.ckpt)              |        256x256       |  re10k, dl3dv |        4        |
 
 ## 📚 Datasets
 Please refer to **[DATASETS.md](DATASETS.md)** for detailed dataset preparation.

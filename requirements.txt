@@ -4,15 +4,15 @@ lightning
 black
 ruff
 hydra-core
-jaxtyping
-beartype
+jaxtyping==0.2.37
+beartype==0.19.0
 wandb
 einops
 colorama
 scikit-image
 colorspacious
 matplotlib
-moviepy
+moviepy==1.0.3
 imageio
 git+https://github.com/rmurai0610/diff-gaussian-rasterization-w-pose.git
 timm
@@ -24,3 +24,4 @@ tabulate
 svg.py
 scikit-video
 opencv-python
+xformers==0.0.24
