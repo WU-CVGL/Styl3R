@@ -227,6 +227,9 @@ A [launch.json](.vscode/launch.json) configuration is provided for debugging all
 - [ ] Release gradio demo 
 - [x] Release training code
 
+## 🙏 Acknowledgements
+This project is based on [NoPoSplat](https://github.com/cvg/NoPoSplat). We sincerely thank the authors for open-sourcing their excellent work.
+
 ## 📖 Citation
 
 If you find our work useful, please consider citing our paper:
