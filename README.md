@@ -170,7 +170,6 @@ CUDA_VISIBLE_DEVICES=0 python -m infer_model_re10k \
     test.pose_align_steps=50 \
     checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt
 ```
-
 https://github.com/user-attachments/assets/ad619cbd-6c64-4993-960f-c5978e9b3522
 
 ### Stylize a scene in Tanks and Temples (COLMAP format)
@@ -183,6 +182,8 @@ CUDA_VISIBLE_DEVICES=0 python -m infer_model_colmap \
     test.pose_align_steps=50 \
     checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt
 ```
+https://github.com/user-attachments/assets/654f8419-22b4-4fbe-aa13-0cdd938dfefd
+
 
 ## 🧩 Debugging
 A [launch.json](.vscode/launch.json) configuration is provided for debugging all training and inference commands in **VSCode**.
