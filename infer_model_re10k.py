@@ -289,7 +289,7 @@ def infer(cfg_dict: DictConfig):
     # cfg.checkpointing.load = 'outputs/exp_re10k_4multi-view_tok-sty-stylization/2025-05-04_02-35-28/checkpoints/epoch_0-step_35000.ckpt'
     
     # re10k + dl3dv
-    cfg.checkpointing.load = 'outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt'
+    # cfg.checkpointing.load = 'outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt'
 
     checkpoint_path = update_checkpoint_path(cfg.checkpointing.load, cfg.wandb)
 
@@ -315,37 +315,20 @@ def infer(cfg_dict: DictConfig):
     # scene_idx = 'f58e63b78cfc54cc'
     # scene_idx = 'b3954464d00ffcc5'
     # scene_idx = '1259726fc1f8e966'
-    scene_idx = '9d496b6788c0f149'
+    # scene_idx = '9d496b6788c0f149'
     # scene_idx = '5f38fc5d3910c6d6' # top view house
     # scene_idx = 'a17fdfcb519750eb'
     # scene_idx = 'd4db9d2a539da854' # bedroom
     # scene_idx = 'a17fdfcb519750eb' # refrig
-    # scene_idx = '0e2c96cd97e73a38' #lamp
+    scene_idx = '0e2c96cd97e73a38' #lamp
     # scene_idx = 'c4ed784ee6c885e5'
     # scene_idx = '45108618c40e26a7' # bedroom lamp
     # scene_idx = 'a79894dc49ea677a'
     
-    # specified_style_image_path = Path('colmap_test_data/styles/starry_night.jpg')
-    # specified_style_image_path = Path('colmap_test_data/styles/2020.png')
-    specified_style_image_path = Path(
-        '/ssdwork/wangpeng/datasets/wikiart/images_combine/train/' \
-        'still-life_86e878e3fab4c3024f333afc1f06ef31c.jpg'
-    )
-    # specified_style_image_path = Path(
-    #     '/ssdwork/wangpeng/datasets/wikiart/images_combine/train/' \
-    #     'genre-painting_fdbcbef6afc35b6f3ceabab995d6a5b3c.jpg'
-    # )
-    # specified_style_image_path = Path('colmap_test_data/styles/abstract.png')
-    # specified_style_image_path = Path(
-    #     '/ssdwork/datasets/stylerf_style/' \
-    #     '17.jpg'
-    # )
+    specified_style_image_path = Path('colmap_test_data/styles/abstract.png')
 
-    # GPT generate images
-    specified_style_image_path = Path('colmap_test_data/styles/p5_gpt.png')
-
-    ctx_indices = torch.tensor([0, 245])
-    num_ctx_views = 8
+    ctx_indices = torch.tensor([0, 80])
+    num_ctx_views = 4
     # ----------------------------------------------------------------------------------------------
 
     to_tensor = tf.ToTensor()

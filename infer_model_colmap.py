@@ -294,7 +294,7 @@ def infer(cfg_dict: DictConfig):
     # data_dir = Path('colmap_test_data/scenes/lego')
     # data_dir = Path('colmap_test_data/scenes/fortress')
     # data_dir = Path('/ssdwork/datasets/tnt/scene_256/scene_256/train')
-    data_dir = Path('colmap_test_data/scenes/truck')
+    data_dir = Path('colmap_test_data/scenes/train')
 
     specified_style_image_path = Path('colmap_test_data/styles/tiger.jpg')
     # specified_style_image_path = Path('colmap_test_data/styles/starry_night.jpg')
@@ -303,8 +303,8 @@ def infer(cfg_dict: DictConfig):
     # specified_style_image_path = Path('/ssdwork/datasets/stylerf_style/10.jpg')
     # specified_style_image_path = Path('/ssdwork/datasets/stylerf_style/121.jpg')
     
-    ctx_indices = torch.tensor([0, 55])
-    num_ctx_views = 20
+    ctx_indices = torch.tensor([1, 9])
+    num_ctx_views = 4
     # ----------------------------------------------------------------------------------------------
 
     colmap_dir = data_dir / "sparse/0/"
