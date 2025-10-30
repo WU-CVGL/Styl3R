@@ -2,90 +2,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "debug noposplat training",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main",
-            "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
-            "args": [
-                "+experiment=re10k_1x8",
-                "wandb.mode=online",
-                "wandb.name=re10k_debug",
-                "data_loader.train.num_workers=0",
-                "data_loader.test.num_workers=0",
-                "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=2",
-            ]
-        },
-        {
-            "name": "inference MAST3R",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/src/test/test_vgg_pcd.py",
-            "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
-            "args": [
-                "+experiment=re10k_1x8",
-                "data_loader.train.num_workers=0",
-                "data_loader.test.num_workers=0",
-                "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=2"
-            ]
-        },
-        {
-            "name": "debug noposplat training overfit",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main",
-            "console": "integratedTerminal",
-            "python": "/ssdwork/envs/conda_peng/noposplat_v2/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
-            },
-            "args": [
-                "+experiment=re10k_1x8",
-                // "+experiment=re10k_dl3dv_1x8",
-                "wandb.mode=disabled",
-                "wandb.name=re10k_original_ovefit",
-                "data_loader.train.num_workers=0",
-                "data_loader.test.num_workers=0",
-                "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=16",
-                // "dataset.re10k.overfit_to_scene=db92831e45859439",
-                // "model.encoder.gs_params_head_type=dpt"
-            ]
-        },
-        {
-            "name": "debug noposplat multi-view training overfit",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main",
-            "console": "integratedTerminal",
-            "python": "/ssdwork/envs/conda_peng/noposplat_v2/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
-            },
-            "args": [
-                "+experiment=re10k_3view_1x.yaml",
-                "wandb.mode=disabled",
-                "wandb.name=re10k_3view_ovefit",
-                "data_loader.train.num_workers=0",
-                "data_loader.test.num_workers=0",
-                "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=2",
-                "dataset.re10k.overfit_to_scene=db92831e45859439",
-                "trainer.val_check_interval=100",
-                // "model.encoder.gs_params_head_type=dpt"
-            ]
-        },
-        {
             "name": "debug RE10K multi-view token style NVS overfit (4-view)",
             "type": "debugpy",
             "request": "launch",
             "module": "src.main_style",
             "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
+            "python": "/usr/bin/python",
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0"
             },
@@ -100,15 +22,15 @@
                 "data_loader.train.batch_size=2",
                 // "dataset.re10k_style.overfit_to_scene=11491a312c6b8f58",
                 // "dataset.re10k_style.overfit_to_scene=db92831e45859439",
-                "dataset.re10k_style.input_image_shape=[352, 640]",
+                // "dataset.re10k_style.input_image_shape=[352, 640]",
                 "dataset.re10k_style.view_sampler.num_context_views=4",
                 "dataset.re10k_style.view_sampler.num_target_views=6",
                 // "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/vango.jpg",
                 "trainer.val_check_interval=100",
                 "model.encoder.stylized=False",
                 "model.encoder.gaussian_adapter.sh_degree=0",
-                // "model.encoder.gs_params_head_type=dpt"
-                "checkpointing.load='outputs/exp_re10k_4multi-view_tok-sty-NVS-pretrain/2025-05-03_14-44-57/checkpoints/epoch_0-step_18750.ckpt'",
+                // NOTE: this is important, uncomment when you have the access to this ckpt
+                // "checkpointing.load='outputs/exp_re10k_4multi-view_tok-sty-NVS-pretrain/2025-05-03_14-44-57/checkpoints/epoch_0-step_18750.ckpt'",
             ]
         },
         {
@@ -117,7 +39,7 @@
             "request": "launch",
             "module": "src.main_style",
             "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
+            "python": "/usr/bin/python",
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0"
             },
@@ -129,21 +51,20 @@
                 "data_loader.train.num_workers=0",
                 "data_loader.test.num_workers=0",
                 "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=2",
+                "data_loader.train.batch_size=1",
                 // "dataset.re10k_style.overfit_to_scene=11491a312c6b8f58",
                 // "dataset.re10k_style.overfit_to_scene=db92831e45859439",
-                "dataset.re10k_style.input_image_shape=[352, 640]",
+                // "dataset.re10k_style.input_image_shape=[352, 640]",
                 "dataset.re10k_style.view_sampler.num_context_views=4",
                 "dataset.re10k_style.view_sampler.num_target_views=6",
                 // "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/vango.jpg",
-                "dataset.dl3dv_style.input_image_shape=[352, 640]",
+                // "dataset.dl3dv_style.input_image_shape=[352, 640]",
                 "dataset.dl3dv_style.view_sampler.num_context_views=4",
                 "dataset.dl3dv_style.view_sampler.num_target_views=6",
                 "trainer.val_check_interval=100",
                 "model.encoder.stylized=False",
                 "model.encoder.gaussian_adapter.sh_degree=0",
-                // "model.encoder.gs_params_head_type=dpt"
-                "checkpointing.load='outputs/exp_re10k_4multi-view_tok-sty-NVS-pretrain/2025-05-03_14-44-57/checkpoints/epoch_0-step_18750.ckpt'",
+                // "checkpointing.load='outputs/exp_re10k_4multi-view_tok-sty-NVS-pretrain/2025-05-03_14-44-57/checkpoints/epoch_0-step_18750.ckpt'",
             ]
         },
         {
@@ -152,7 +73,7 @@
             "request": "launch",
             "module": "src.main_style",
             "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
+            "python": "/usr/bin/python",
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0"
             },
@@ -167,16 +88,15 @@
                 "data_loader.train.batch_size=2",
                 "dataset.re10k_style.overfit_to_scene=11491a312c6b8f58",
                 // "dataset.re10k_style.overfit_to_scene=db92831e45859439",
-                "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/vango.jpg",
+                "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/leaf.jpg",
                 "dataset.re10k_style.view_sampler.num_context_views=2",
                 "trainer.val_check_interval=100",
                 "model.encoder.stylized=True",
                 "model.encoder.gaussian_adapter.sh_degree=0",
-                // "model.encoder.gs_params_head_type=dpt"
                 "loss=style",
                 // "loss.style.style_weight=5.0",
                 "train.identity_loss=true",
-                "checkpointing.load='outputs/exp_re10k_multi-view_tok-sty-NVS-pretrain/2025-04-29_19-47-17/checkpoints/epoch_0-step_15000.ckpt'",
+                // "checkpointing.load='outputs/exp_re10k_multi-view_tok-sty-NVS-pretrain/2025-04-29_19-47-17/checkpoints/epoch_0-step_15000.ckpt'",
                 // "checkpointing.every_n_train_steps=5"
             ]
         },
@@ -186,7 +106,7 @@
             "request": "launch",
             "module": "src.main_style",
             "console": "integratedTerminal",
-            "python": "/ssdwork/envs/conda_peng/noposplat_v2/bin/python",
+            "python": "/usr/bin/python",
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0"
             },
@@ -203,78 +123,15 @@
                 // "dataset.re10k_style.overfit_to_scene=db92831e45859439",
                 "dataset.re10k_style.view_sampler.num_context_views=4",
                 "dataset.re10k_style.view_sampler.num_target_views=6",
-                "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/vango.jpg",
+                "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/leaf.jpg",
                 "trainer.val_check_interval=100",
                 "model.encoder.stylized=True",
                 "model.encoder.gaussian_adapter.sh_degree=0",
-                // "model.encoder.gs_params_head_type=dpt"
                 "loss=style",
                 // "loss.style.style_weight=5.0",
                 "train.identity_loss=true",
-                "checkpointing.load='outputs/exp_re10k_4multi-view_tok-sty-NVS-pretrain/2025-05-03_14-44-57/checkpoints/epoch_0-step_18750.ckpt'",
+                // "checkpointing.load='outputs/exp_re10k_4multi-view_tok-sty-NVS-pretrain/2025-05-03_14-44-57/checkpoints/epoch_0-step_18750.ckpt'",
                 // "checkpointing.every_n_train_steps=5"
-            ]
-        },
-        {
-            "name": "debug multi-view token style validation",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main_style",
-            "console": "integratedTerminal",
-            "python": "/ssdwork/envs/conda_peng/noposplat_v2/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
-            },
-            "args": [
-                "+experiment=re10k_3view_style_1x.yaml",
-                "mode=val",
-                "wandb.mode=online",
-                "wandb.project=noposplat_xiang_token_style_debug_dump",
-                "wandb.name=re10k_3view_token-style_ovefit",
-                "data_loader.train.num_workers=0",
-                "data_loader.test.num_workers=0",
-                "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=2",
-                // "dataset.re10k_style.overfit_to_scene=11491a312c6b8f58",
-                // "dataset.re10k_style.overfit_to_scene=db92831e45859439",
-                "dataset.re10k_style.view_sampler.num_context_views=4",
-                "dataset.re10k_style.view_sampler.num_target_views=6",
-                // "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/vango.jpg",
-                "model.encoder.stylized=True",
-                "model.encoder.gaussian_adapter.sh_degree=0",
-                "train.identity_loss=true",
-                "checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt",
-            ]
-        },
-        {
-            "name": "debug multi-view token style evaluation",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main_style",
-            "console": "integratedTerminal",
-            "python": "/ssdwork/envs/conda_peng/noposplat_v2/bin/python",
-            // "env": {
-            //     "CUDA_VISIBLE_DEVICES": "0"
-            // },
-            "args": [
-                "+experiment=re10k_3view_style_8x8",
-                "mode=test",
-                "wandb.name=re10k_3view",
-                "dataset/view_sampler@dataset.re10k_style.view_sampler=evaluation",
-                "dataset.re10k_style.view_sampler.index_path=assets/evaluation_index_re10k.json",
-                "dataset.re10k_style.view_sampler.num_context_views=2",
-                "checkpointing.load=outputs/exp_re10k_multi-view_tok-sty-stylization_content-h3-h4/2025-05-01_23-06-44/checkpoints/epoch_0-step_35000.ckpt",
-                "test.save_image=true",
-                // "data_loader.train.num_workers=0",
-                // "data_loader.test.num_workers=0",
-                // "data_loader.val.num_workers=0",
-                "model.encoder.stylized=True",
-                "model.encoder.gaussian_adapter.sh_degree=0",
-                // "test.align_pose=false",
-                // "test.output_path=outputs/test_style_2view",
-                // "test.compute_scores=false",
-                // "test.save_video=true",
-                // "test.save_compare=true"
             ]
         },
         {
@@ -283,7 +140,7 @@
             "request": "launch",
             "module": "infer_model_re10k",
             "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
+            "python": "/usr/bin/python",
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0"
             },
@@ -297,71 +154,12 @@
             ]
         },
         {
-            "name": "debug multi-view token style inference re10k different image sizes",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "infer_model_re10k_different-sizes-single",
-            "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
-            },
-            "args": [
-                "+experiment=re10k_3view_style_1x.yaml",
-                "wandb.name=re10k_tok-sty_inference_different-img-sizes",
-                "model.encoder.stylized=True",
-                "model.encoder.gaussian_adapter.sh_degree=0",
-                "test.pose_align_steps=50",
-                "checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt",
-            ]
-        },
-        {
-            "name": "debug multi-view token style inference dl3dv different image sizes",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "infer_model_dl3dv_different-sizes-single",
-            "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
-            },
-            "args": [
-                "+experiment=dl3dv_3view_style_1x.yaml",
-                "wandb.name=dl3dv_tok-sty_inference_different-img-sizes",
-                "model.encoder.stylized=True",
-                "model.encoder.gaussian_adapter.sh_degree=0",
-                "test.pose_align_steps=50",
-                "checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt",
-            ]
-        },
-        {
-            "name": "debug multi-view token style inference DTU",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "infer_model_DTU",
-            "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
-            },
-            "args": [
-                "+experiment=re10k_3view_style_1x.yaml",
-                "wandb.name=DTU_tok-sty_inference",
-                "dataset.re10k_style.roots=[/ssdwork/datasets/dtu]",
-                "dataset.re10k_style.skip_bad_shape=false",
-                "model.encoder.stylized=True",
-                "model.encoder.gaussian_adapter.sh_degree=0",
-                "test.pose_align_steps=50",
-                "checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt",
-            ]
-        },
-        {
             "name": "debug multi-view token style inference colmap",
             "type": "debugpy",
             "request": "launch",
             "module": "infer_model_colmap",
             "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
+            "python": "/usr/bin/python",
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0"
             },
@@ -372,255 +170,6 @@
                 "model.encoder.gaussian_adapter.sh_degree=0",
                 "test.pose_align_steps=50",
                 "checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt",
-            ]
-        },
-        {
-            "name": "debug multi-view token style inference colmap different image sizes",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "infer_model_colmap_different-sizes",
-            "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
-            },
-            "args": [
-                "+experiment=re10k_3view_style_1x.yaml",
-                "wandb.name=video_colmap_tok-sty_inference_different",
-                "model.encoder.stylized=True",
-                "model.encoder.gaussian_adapter.sh_degree=0",
-                "test.pose_align_steps=50",
-                "checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt",
-            ]
-        },
-        {
-            "name": "debug multi-view token style inference colmap iterate",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "infer_model_colmap_iterate",
-            "console": "integratedTerminal",
-            "python": "/ssdwork/envs/conda_peng/noposplat_v2/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
-            },
-            "args": [
-                "+experiment=re10k_3view_style_1x.yaml",
-                "wandb.name=video_colmap_tok-sty_inference",
-                "model.encoder.stylized=True",
-                "model.encoder.gaussian_adapter.sh_degree=0",
-                "test.pose_align_steps=50",
-                "checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt",
-            ]
-        },
-        {
-            "name": "debug noposplat style feature head pretraining",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main_style",
-            "console": "integratedTerminal",
-            // "python": "/root/anaconda3/envs/iccv2025/bin/python",
-            "python": "/ssdwork/envs/conda_peng/noposplat/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "3"
-            },
-            "args": [
-                "+experiment=re10k_style_1x8",
-                "wandb.mode=online",
-                "wandb.project=noposplat_xiang_debug_dump",
-                "wandb.name=re10k_feature_head_overfit_debug",
-                "data_loader.train.num_workers=0",
-                "data_loader.test.num_workers=0",
-                "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=1",
-                // "dataset.re10k.overfit_to_scene=54be94f158023eea",
-                "dataset.re10k.overfit_to_scene=11491a312c6b8f58",
-                // "dataset.re10k.overfit_to_scene=154813fc1d6820dc",
-                "trainer.val_check_interval=100",
-                "checkpointing.every_n_train_steps=1_000",
-                "model.encoder.stylized=False",
-                "model.encoder.appearance_feature_dim=256",
-                "model.encoder.gaussian_adapter.sh_degree=0",
-                // "model.encoder.pointcloud_encoder.n_levels=1"
-                // "optimizer.lr=1e-4",
-            ]
-        },
-        {
-            "name": "debug noposplat style training",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main_style",
-            "console": "integratedTerminal",
-            "python": "/root/anaconda3/envs/iccv2025/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "2"
-            },
-            "args": [
-                "+experiment=re10k_style_1x8",
-                "wandb.mode=online",
-                "wandb.project=noposplat_xiang_debug_dump",
-                "wandb.name=re10k_style_training_MultiHeadAttention",
-                "data_loader.train.num_workers=0",
-                "data_loader.test.num_workers=0",
-                "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=1",
-                // "dataset.re10k.overfit_to_scene=54be94f158023eea",
-                "dataset.re10k_style.overfit_to_scene=11491a312c6b8f58",
-                "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/vango.jpg",
-                // "dataset.re10k.overfit_to_scene=1fcc400e42725a95",
-                // "dataset.re10k.overfit_to_scene=154813fc1d6820dc",
-                "trainer.val_check_interval=100",
-                // "checkpointing.every_n_train_steps=1_000",
-                "model.encoder.gaussian_adapter.sh_degree=0",
-                "model.encoder.stylized=True",
-                "model.encoder.stylizer=CrossAttention",
-                // "model.encoder.direct_opt_sh_res=True",
-                // "model.encoder.direct_opt_feat_res=True",
-                "loss=adaattn",
-                // "loss=style",
-                // "loss.adaattn.lam=0.6",
-                "loss.adaattn.style_loss_stats=['mean', 'std']",
-                "loss.adaattn.style_loss_layers=[1,2,3,4]",
-                // "model.encoder.pretrained_weights='ckpts/pretrained_attribute_head.ckpt'",
-                "model.encoder.pretrained_weights='outputs/exp_re10k_feature_head_256_full_4x_sh0/2025-03-22_01-08-05/checkpoints/epoch_0-step_37500.ckpt'",
-                // "model.encoder.pretrained_weights='outputs/exp_re10k_feature_head_512_full_4x/2025-03-20_02-06-01/checkpoints/epoch_0-step_37500.ckpt'",
-                // "model.encoder.appearance_feature_dim=512",
-                // "optimizer.lr=1e-4",
-            ]
-        },
-        {
-            "name": "debug noposplat style evaluation",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main_style",
-            "console": "integratedTerminal",
-            "python": "/opt/conda/envs/noposplat/bin/python",
-            "args": [
-                "+experiment=re10k_style_1x8",
-                "mode=test",
-                "wandb.mode=online",
-                "wandb.name=re10k_feature_head_test",
-                "dataset/view_sampler@dataset.re10k.view_sampler=evaluation",
-                "dataset.re10k.view_sampler.index_path=assets/evaluation_index_re10k.json",
-                "checkpointing.load=./outputs/exp_re10k_style_training_/2025-03-17_21-19-28/checkpoints/epoch_0-step_37500.ckpt",
-                "test.save_image=true",
-                // "data_loader.train.num_workers=0",
-                // "data_loader.test.num_workers=0",
-                // "data_loader.val.num_workers=0",
-                "model.encoder.stylized=True",
-                // "test.align_pose=false",
-                "test.output_path=outputs/test_1",
-                "test.compute_scores=false",
-                // "test.save_video=true",
-                // "test.save_compare=true"
-            ]
-        },
-        {
-            "name": "debug token stylizer pts distillation",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main_style",
-            "console": "integratedTerminal",
-            // "python": "/root/anaconda3/envs/iccv2025/bin/python",
-            "python": "/ssdwork/envs/conda_peng/noposplat_v2/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
-            },
-            "args": [
-                "+experiment=re10k_style_1x8",
-                "wandb.mode=disabled",
-                "wandb.project=noposplat_xiang_token_style_debug_dump",
-                "wandb.name=re10k_token_style_overfit_debug",
-                "data_loader.train.num_workers=0",
-                "data_loader.test.num_workers=0",
-                "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=1",
-                // "dataset.re10k.overfit_to_scene=54be94f158023eea",
-                "dataset.re10k_style.overfit_to_scene=11491a312c6b8f58",
-                // "dataset.re10k.overfit_to_scene=154813fc1d6820dc",
-                // "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/vango.jpg",
-                "trainer.val_check_interval=100",
-                "checkpointing.every_n_train_steps=1_000",
-                "model.encoder.stylized=False",
-                "model.encoder.gs_sh_head_type=dpt",
-                // "model.encoder.gaussian_adapter.sh_degree=0",
-                // "optimizer.lr=1e-4",
-                "train.identity_loss=false",
-                "train.distill_only=true",
-                "train.distiller=mast3r",
-            ]
-        },
-        {
-            "name": "debug token stylizer NVS pretraining",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main_style",
-            "console": "integratedTerminal",
-            // "python": "/root/anaconda3/envs/iccv2025/bin/python",
-            "python": "/ssdwork/envs/conda_peng/noposplat_v2/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "0"
-            },
-            "args": [
-                "+experiment=re10k_style_1x8",
-                "wandb.mode=disabled",
-                "wandb.project=noposplat_xiang_token_style_debug_dump",
-                "wandb.name=re10k_token_style_overfit_debug",
-                // "data_loader.train.num_workers=0",
-                // "data_loader.test.num_workers=0",
-                // "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=12",
-                // "dataset.re10k.overfit_to_scene=54be94f158023eea",
-                "dataset.re10k_style.overfit_to_scene=11491a312c6b8f58",
-                // "dataset.re10k.overfit_to_scene=154813fc1d6820dc",
-                "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/vango.jpg",
-                "trainer.val_check_interval=100",
-                "checkpointing.every_n_train_steps=1_000",
-                "model.encoder.stylized=False",
-                "model.encoder.gs_sh_head_type=dpt",
-                // "model.encoder.gaussian_adapter.sh_degree=0",
-                // "optimizer.lr=1e-4",
-                // "loss=style",
-                "train.identity_loss=false",
-                // "train.distiller=mast3r",
-                // "train.distill_max_steps=30000",
-                "checkpointing.load='outputs/exp_re10k_token_style_distill_pretrain/2025-04-21_15-52-19/checkpoints/epoch_0-step_9376.ckpt'"
-            ]
-        },
-        {
-            "name": "debug token stylizer stylization training",
-            "type": "debugpy",
-            "request": "launch",
-            "module": "src.main_style",
-            "console": "integratedTerminal",
-            // "python": "/root/anaconda3/envs/iccv2025/bin/python",
-            "python": "/ssdwork/envs/conda_peng/noposplat_v2/bin/python",
-            "env": {
-                "CUDA_VISIBLE_DEVICES": "1"
-            },
-            "args": [
-                "+experiment=re10k_style_1x8",
-                "wandb.mode=disabled",
-                "wandb.project=noposplat_xiang_token_style_debug_dump",
-                "wandb.name=re10k_token_style_overfit_debug",
-                "data_loader.train.num_workers=0",
-                "data_loader.test.num_workers=0",
-                "data_loader.val.num_workers=0",
-                "data_loader.train.batch_size=6",
-                // "dataset.re10k.overfit_to_scene=54be94f158023eea",
-                "dataset.re10k_style.overfit_to_scene=11491a312c6b8f58",
-                // "dataset.re10k.overfit_to_scene=154813fc1d6820dc",
-                "dataset.re10k_style.specified_style_image_path=colmap_test_data/styles/vango.jpg",
-                "trainer.val_check_interval=100",
-                "checkpointing.every_n_train_steps=1_000",
-                "model.encoder.stylized=True",
-                "model.encoder.gs_sh_head_type=dpt",
-                // "model.encoder.gaussian_adapter.sh_degree=0",
-                // "optimizer.lr=1e-4",
-                "loss=style",
-                "train.identity_loss=true",
-                // "train.distiller=mast3r",
-                // "train.distill_max_steps=1000",
-                "checkpointing.load='outputs/exp_re10k_token_style_pretrain_pre-distilled/2025-04-21_21-39-54/checkpoints/epoch_0-step_25000.ckpt'"
             ]
         },
     ]
