@@ -171,6 +171,8 @@ CUDA_VISIBLE_DEVICES=0 python -m infer_model_re10k \
     checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt
 ```
 
+https://github.com/user-attachments/assets/ad619cbd-6c64-4993-960f-c5978e9b3522
+
 ### Stylize a scene in Tanks and Temples (COLMAP format)
 ```
 CUDA_VISIBLE_DEVICES=0 python -m infer_model_colmap \
