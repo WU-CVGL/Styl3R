@@ -14,14 +14,15 @@
 <h3 align="center">NeurIPS 2025</h3>
 <h3 align="center"><a href="https://arxiv.org/abs/2505.21060">Paper</a> | <a href="https://nickisdope.github.io/Styl3R/">Project Page</a> </h3>
 
-📢 The training and inference code is updated. Please inform us if you have encountered any issues.
-
 <!-- <img src="assets/teaser_crop-9.gif" width="600" height="258"/> -->
 ![teaser](assets/teaser_crop-9.gif)
 <p align="center">
 <strong>Styl3R</strong> predicts stylized 3D Gaussians in less than a second using a feed-forward network given unposed sparse-view images and an arbitrary style image.
 </p>
 </div>
+
+## 📢 Updates
+- 2025.10.31: The training and inference code is updated. Please inform us if you have encountered any issues.
   
 ## ⚙️ Installation
 Our code relies on Python 3.10+, and is developed based on PyTorch 2.2.0 and CUDA 12.1, but it should work with higher Pytorch/CUDA versions as well.
