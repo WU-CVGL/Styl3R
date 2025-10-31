@@ -3,7 +3,15 @@
 <div align="center">
   <!-- <a href=https://nickisdope.github.io/Styl3R/ target="_blank"><img src="https://img.shields.io/badge/Project-Page-green.svg" height=22px></a>
   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"><img src=https://img.shields.io/badge/Arxiv-b5212f.svg?logo=arxiv height=22px></a> -->
-
+<p align="center">
+    <a href="https://wangpeng000.github.io/">Peng Wang*</a>
+    ·
+    <a href="https://github.com/Nickisdope">Xiang Liu*</a>
+    ·
+    <a href="https://ethliup.github.io/">Peidong Liu</a>
+</p>
+<p align="center">(* Equal Contribution)</p>
+<h3 align="center">NeurIPS 2025</h3>
 <h3 align="center"><a href="https://arxiv.org/abs/2505.21060">Paper</a> | <a href="https://nickisdope.github.io/Styl3R/">Project Page</a> </h3>
 
 📢 The training and inference code is updated. Please inform us if you have encountered any issues.
