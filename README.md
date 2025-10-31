@@ -77,7 +77,7 @@ After setting up the datasets (**RE10K**, **DL3DV**, and **WikiArt**):
 First download the [MASt3R](https://download.europe.naverlabs.com/ComputerVision/MASt3R/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth) pretrained model and put it in the `./ckpts` directory.
 ### Stage 1: NVS Pretraining
 #### (1) 2-view Model (RE10K)
-```
+```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5 python -m src.main_style +experiment=re10k_3view_style_8x8 \
     wandb.mode=online \
     wandb.project=noposplat_xiang_token_style_pretrain \
@@ -92,7 +92,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5 python -m src.main_style +experiment=re10k_3vie
 
 #### (2) 4-view Model (RE10K)
 Initialize from the pretrained **2-view** model by setting `checkpointing.load` to the corresponding checkpoint path.
-```
+```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m src.main_style +experiment=re10k_3view_style_8x8 \
     wandb.mode=online \
     wandb.project=noposplat_xiang_token_style_pretrain \
@@ -110,7 +110,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m src.main_style +experiment=re10k_
 #### (3) 4-view Model (RE10K + DL3DV)
 
 Initialize from the pretrained **4-view RE10K** model.
-```
+```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m src.main_style +experiment=re10k_dl3dv_3view_style_8x8 \
     wandb.mode=online \
     wandb.project=noposplat_xiang_token_style_pretrain \
@@ -130,7 +130,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m src.main_style +experiment=re10k_
 ### Stage 2: Stylization Fine-tuning
 #### (1) 2-view Model (RE10K)
 Initialize from the **2-view NVS-pretrained** checkpoint.
-```
+```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5 python -m src.main_style +experiment=re10k_3view_style_8x8 \
     wandb.mode=online \
     wandb.project=noposplat_xiang_token_style_debug \
@@ -149,7 +149,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5 python -m src.main_style +experiment=re10k_3vie
 
 #### (2) 4-view Model (RE10K)
 Initialize from the **4-view NVS-pretrained** checkpoint.
-```
+```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m src.main_style +experiment=re10k_3view_style_8x8 \
     wandb.mode=online \
     wandb.project=noposplat_xiang_token_style_debug \
@@ -169,7 +169,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m src.main_style +experiment=re10k_
 
 #### (3) 4-view Model (RE10K + DL3DV)
 Initialize from the **4-view NVS-pretrained** checkpoint on RE10K + DL3DV.
-```
+```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m src.main_style +experiment=re10k_dl3dv_3view_style_8x8 \
     wandb.mode=online \
     wandb.project=noposplat_xiang_token_style_debug \
@@ -193,26 +193,26 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m src.main_style +experiment=re10k_
 > **Note:** Set `checkpointing.load` to a checkpoint obtained **after stylization fine-tuning**.
 
 ### Stylize a scene in RE10K
-```
+```bash
 CUDA_VISIBLE_DEVICES=0 python -m infer_model_re10k \
     +experiment=re10k_3view_style_1x.yaml \
     wandb.name=re10k_tok-sty_inference \
     model.encoder.stylized=True \
     model.encoder.gaussian_adapter.sh_degree=0 \
     test.pose_align_steps=50 \
-    checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt
+    checkpointing.load='outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt'
 ```
 https://github.com/user-attachments/assets/ad619cbd-6c64-4993-960f-c5978e9b3522
 
 ### Stylize a scene in Tanks and Temples (COLMAP format)
-```
+```bash
 CUDA_VISIBLE_DEVICES=0 python -m infer_model_colmap \
     +experiment=re10k_3view_style_1x.yaml \
     wandb.name=video_colmap_tok-sty_inference \
     model.encoder.stylized=True \
     model.encoder.gaussian_adapter.sh_degree=0 \
     test.pose_align_steps=50 \
-    checkpointing.load=outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt
+    checkpointing.load='outputs/exp_re10k_dl3dv_4multi-view_tok-sty-stylization_b2x3/2025-05-06_19-31-34/checkpoints/epoch_0-step_35000.ckpt'
 ```
 https://github.com/user-attachments/assets/654f8419-22b4-4fbe-aa13-0cdd938dfefd
 
