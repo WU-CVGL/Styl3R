@@ -17,9 +17,10 @@
 <!-- <img src="assets/teaser_crop-9.gif" width="600" height="258"/> -->
 ![teaser](assets/teaser_crop-9.gif)
 <p align="center">
-<strong>Styl3R</strong> predicts stylized 3D Gaussians in less than a second using a feed-forward network given unposed sparse-view images and an arbitrary style image.
+<strong>Styl3R</strong> predicts stylized 3D Gaussians in less than a second using a feed-forward network given unposed sparse-view images and an arbitrary style image.<br>
+🤖 Our method could potentially improve the efficiency of domain randomization in sim2real transfer as in
+<a href="https://youtu.be/vdxB89lgZhQ?si=R1b1G5YL1xGNr1N0&t=23" target="_blank">Deep Drone Racing</a>.
 </p>
-</div>
 
 ## 📢 Updates
 - 2025.10.31: The training and inference code is updated. Please inform us if you have encountered any issues.
