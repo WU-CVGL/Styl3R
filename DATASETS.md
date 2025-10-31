@@ -26,7 +26,7 @@ Expected folder structure:
 │   ├── ├── ├── index.json
 ```
 
-By default, we assume the datasets are placed in `datasets/re10k`, `datasets/dl3dv`, and `datasets/acid`. Otherwise you will need to specify your dataset path with `dataset.DATASET_NAME.roots=[YOUR_DATASET_PATH]` in the running script.
+By default, we assume the datasets are placed in `datasets/re10k`, `datasets/dl3dv`. Otherwise you will need to specify your dataset path with `dataset.DATASET_NAME.roots=[YOUR_DATASET_PATH]` in the running script.
 
 We also provide instructions to convert additional datasets to the desired format.
 
