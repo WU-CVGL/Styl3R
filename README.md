@@ -17,7 +17,6 @@
 📢 The training and inference code is updated. Please inform us if you have encountered any issues.
 
 <!-- <img src="assets/teaser_crop-9.gif" width="600" height="258"/> -->
-
 ![teaser](assets/teaser_crop-9.gif)
 <p align="center">
 <strong>Styl3R</strong> predicts stylized 3D Gaussians in less than a second using a feed-forward network given unposed sparse-view images and an arbitrary style image.
