@@ -19,13 +19,10 @@
 <!-- <img src="assets/teaser_crop-9.gif" width="600" height="258"/> -->
 
 ![teaser](assets/teaser_crop-9.gif)
-
+<p align="center">
+<strong>Styl3R</strong> predicts stylized 3D Gaussians in less than a second using a feed-forward network given unposed sparse-view images and an arbitrary style image.
+</p>
 </div>
-
-## 📝 Summary
-- We introduce a feed-forward network for 3D stylization that operates on sparse, unposed content images and an arbitrary style image, does not require test-time optimization, and generalizes well to out-of-domain inputs.
-- We design a dual-branch network architecture that decouples appearance and structure modeling, effectively enhancing the joint learning of novel view synthesis and 3D stylization.
-- Our method achieves state-of-the-art zero-shot 3D stylization performance, surpassing existing zero-shot methods and approximate the efficacy of style-specific optimization techniques.
   
 ## ⚙️ Installation
 Our code relies on Python 3.10+, and is developed based on PyTorch 2.2.0 and CUDA 12.1, but it should work with higher Pytorch/CUDA versions as well.
